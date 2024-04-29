@@ -1,14 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    display: flex;
     padding: 0;
     margin: 0;
+    justify-content: center;
 }
 
 .grid-container {
-    display: grid;
+    width: 35%;
+    margin-top: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .square {
-    height: 25px;
-    width: 25px;
+    height: 40px;
+    flex-basis: 6.25%;
     background-color: #282828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
