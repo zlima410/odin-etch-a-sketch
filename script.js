@@ -27,7 +27,7 @@ function addHover() {
 
     allSquares.forEach(eachSquare => {
         eachSquare.addEventListener("mouseover", () => {
-            eachSquare.className = "sqaure change-color"
+            eachSquare.className = "square change-color"
         });
     });
 }
