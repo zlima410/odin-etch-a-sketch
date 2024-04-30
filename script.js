@@ -22,6 +22,16 @@ function board() {
     });
 }
 
+function addHover() {
+    const allSquares = document.querySelectorAll(".square");
+
+    allSquares.forEach(eachSquare => {
+        eachSquare.addEventListener("mouseover", () => {
+            eachSquare.className = "sqaure change-color"
+        });
+    });
+}
+
 function clearGrid() {
     const gridContainer = document.querySelector(".grid-container");
     const getAllRows = document.querySelectorAll(".all-rows");
@@ -30,3 +40,23 @@ function clearGrid() {
         gridContainer.removeChild(eachRow);
     });
 }
+
+function editGridSize() {
+    const newSize = document.querySelector("button");
+
+    newSize.addEventListener("click", () => {
+        clearGrid();
+        numRowCol = Number(prompt("Enter a number (1-100): "));
+
+        while (numRowCol < 1 && numRowCol > 100) {
+            numRowCol = Number(prompt("Number out of bounds. Please enter a new number: "));
+        }
+
+        board();
+        addHover();
+    });
+}
+
+board();
+addHover();
+editGridSize();
