@@ -7,3 +7,11 @@ for (let i = 0; i < defaultGridSize; i++) {
     squareArray[i].classList.add("square");
     gridContainer.appendChild(squareArray[i]);
 }
+
+document.addEventListener("mousemove", (e) => {
+    let target = e.target;
+
+    if (target.className === "square") {
+        target.setAttribute("id", "marked");
+    }
+});
