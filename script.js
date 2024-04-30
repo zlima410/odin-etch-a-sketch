@@ -1,16 +1,26 @@
-const defaultGridSize = 16 * 16;
 const gridContainer = document.querySelector(".grid-container");
-let squareArray = [defaultGridSize];
+createGrid(16, 16);
 
 function createGrid(side, side) {
+    let squareArray = [side * side];
+    for (let i = 0; i < (side * side); i++) {
+        squareArray[i] = document.createElement("div");
+        squareArray[i].classList.add("square");
+        gridContainer.appendChild(squareArray[i]);
+    }
+}
+
+function resetGrid() {
     
 }
 
-for (let i = 0; i < defaultGridSize; i++) {
-    squareArray[i] = document.createElement("div");
-    squareArray[i].classList.add("square");
-    gridContainer.appendChild(squareArray[i]);
-}
+document.addEventListener("click", (e) => {
+    let target = e.target;
+
+    if (target.className === "reset") {
+        resetGrid();
+    }
+});
 
 document.addEventListener("mousemove", (e) => {
     let target = e.target;
